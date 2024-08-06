@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-run maven CI</actionName>
+            <displayName>run maven CI</displayName>
+            <goals>
+                <goal>clean</goal>
+                <goal>install</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-mvn test</actionName>
+            <displayName>mvn test</displayName>
+            <goals>
+                <goal>test</goal>
+            </goals>
+        </action>
+    </actions>

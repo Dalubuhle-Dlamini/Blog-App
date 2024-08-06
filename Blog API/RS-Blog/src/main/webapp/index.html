@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>RS-Blog Project]</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                color: #333;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 0;
+            }
+            .container {
+                width: 80%;
+                margin: 0 auto;
+                overflow: hidden;
+                padding: 20px;
+                background: #fff;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            h1, h2, h3 {
+                color: #007BFF;
+            }
+            code {
+                background: #f4f4f4;
+                padding: 0.2em 0.4em;
+                border-radius: 3px;
+                font-family: monospace;
+                color: #d63384;
+            }
+            pre {
+                background: #f4f4f4;
+                padding: 10px;
+                border-radius: 3px;
+                overflow-x: auto;
+            }
+            a {
+                color: #007BFF;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            .section {
+                margin-bottom: 20px;
+            }
+            .section h2 {
+                border-bottom: 2px solid #007BFF;
+                padding-bottom: 10px;
+            }
+            .code-block {
+                background: #f8f9fa;
+                border-left: 3px solid #007BFF;
+                padding: 10px;
+                margin: 10px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>RS-Blog Project - Dalubuhle Dlamini</h1>
+
+            <div class="section">
+                <h2>Overview</h2>
+                <p>RS-Blog is a RESTful web service application designed to manage user data. The project utilizes Jakarta EE for backend services and OpenAPI for API documentation, which is accessible via Swagger UI.</p>
+            </div>
+
+            <div class="section">
+                <h2>Prerequisites</h2>
+                <ul>
+                    <li>Java 17 or later</li>
+                    <li>Apache Maven 3.6.3 or later</li>
+                    <li>Apache Tomcat 10.0 or later or GlassFish Server 7.0 or later</li>
+                    <li>An IDE such as Apache NetBeans or Eclipse</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Installation Instructions</h2>
+                <h3>Installation on Apache NetBeans</h3>
+                <ol>
+                    <li>Click on <strong>Open Project</strong> and browse for the project, then click <strong>Open Project</strong>.</li>
+                    <li>Right-click on the project and go to <strong>Properties</strong>.</li>
+                    <li>Click on <strong>Run</strong>, then select <strong>GlassFish 7.0.0</strong> server and JDK 17 or higher.</li>
+                    <li>Right-click and look for <strong>Run Maven</strong>, then select <strong>Goals</strong>.</li>
+                    <li>In the <strong>Goals</strong> field, enter <code>clean install</code> and wait for it to finish.</li>
+                    <li>Then right-click and select <strong>Run</strong>.</li>
+                </ol>
+
+                <h3>Installation on Eclipse</h3>
+                <ol>
+                    <li>Click on <strong>File</strong> and select <strong>Import</strong>.</li>
+                    <li>In the filter field, enter <strong>Maven</strong> and select <strong>Existing Maven Project</strong>, then click <strong>Next</strong>.</li>
+                    <li>Click <strong>Browse</strong> and look for the project, then select <strong>Finish</strong>.</li>
+                    <li>Right-click on the project and select <strong>Properties</strong>, then look for <strong>Targeted Runtimes</strong>.</li>
+                    <li>Add <strong>GlassFish 7.0.0</strong> server or <strong>Apache Tomcat 10.0.0</strong> server and check it.</li>
+                    <li>Right-click on the project, click on <strong>Maven</strong>, then <strong>Update Project</strong>.</li>
+                    <li>Run the project.</li>
+                </ol>
+            </div>
+
+            <div class="section">
+                <h3>1. Access the Application</h3>
+                <p>Once deployed, access the application at:</p>
+                <ul>
+                    <li><strong>Base URL:</strong> <code>http://localhost:8080/RS-Blog</code></li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>OpenAPI Documentation</h2>
+                <h3>Accessing OpenAPI JSON</h3>
+                <p>The OpenAPI JSON specification can be accessed at:</p>
+                <pre class="code-block"><a href="http://localhost:8080/RS-Blog/api/openapi.json">http://localhost:8080/RS-Blog/api/openapi.json</a></pre>
+
+                <h3>Swagger UI</h3>
+                <p>Swagger UI provides an interactive documentation for the API. To view the Swagger UI:</p>
+                <ol>
+                    <li>Access Swagger UI at:</li>
+                    <pre class="code-block"><a href="http://localhost:8080/RS-Blog/swagger-ui">http://localhost:8080/RS-Blog/swagger-ui</a></pre>
+                </ol>
+            </div>
+            <div class="section">
+            <h2>Swagger UI Screenshot</h2>
+            <div class="screenshot">
+                <img src="./swagger-ui/swagger-screenshot.png" alt="Swagger UI Screenshot">
+                <p>Example screenshot of Swagger UI with the RS-Blog API documentation.</p>
+            </div>
+        </div>
+
+            <div class="section">
+                <h2>API Endpoints</h2>
+                <h3><a href="http://localhost:8080/RS-Blog/api/users">/users</a></h3>
+                <ul>
+                    <li><strong>GET /users</strong>: Retrieve a list of all users or a paginated subset of users.</li>
+                    <li><strong>GET /users/{userId}</strong>: Retrieve a user by their ID.</li>
+                    <li><strong>POST /users</strong>: Add a new user with the provided details.</li>
+                    <li><strong>PUT /users/{userId}</strong>: Update an existing user by their ID.</li>
+                    <li><strong>DELETE /users/{userId}</strong>: Remove a user from the system by their ID.</li>
+                </ul>
+
+                <h3><a href="http://localhost:8080/RS-Blog/api/posts">/posts</a></h3>
+                <ul>
+                    <li><strong>GET /posts</strong>: Retrieve a list of all posts or a paginated subset of posts.</li>
+                    <li><strong>GET /posts/{postId}</strong>: Retrieve a posts by their ID.</li>
+                    <li><strong>POST /posts</strong>: Add a new posts with the provided details.</li>
+                    <li><strong>PUT /posts/{postId}</strong>: Update an existing posts by their ID.</li>
+                    <li><strong>DELETE /posts/{postId}</strong>: Remove a posts from the system by their ID.</li>
+                </ul>
+
+                <h3><a href="http://localhost:8080/RS-Blog/api/comments">/comments</a></h3>
+                <ul>
+                    <li><strong>GET /comments</strong>: Retrieve a list of all comments or a paginated subset of comments.</li>
+                    <li><strong>GET /comments/{commentId}</strong>: Retrieve a comments by their ID.</li>
+                    <li><strong>POST /comments</strong>: Add a new comments with the provided details.</li>
+                    <li><strong>PUT /comments/{commentId}</strong>: Update an existing comments by their ID.</li>
+                    <li><strong>DELETE /comments/{commentId}</strong>: Remove a comments from the system by their ID.</li>
+                </ul>
+            </div>
+
+           
+        </div>
+    </body>
+</html>
